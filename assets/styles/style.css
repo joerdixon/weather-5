@@ -1,0 +1,62 @@
+/* Variables */
+
+/* Element Styling */
+
+header {
+    /* Layout */
+    padding: 1vh;
+    /* Deco */
+    background-color: deepskyblue;
+    color: navy;
+    text-align: center;
+}
+
+main {
+    /* Layout */
+    height: 87vh;
+    margin: 2vh;
+    /* Flex Settings */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* ID Styling */
+
+#search-area {
+    width: 20%;
+    height: 100%;
+    /* Deco */
+    background-color: beige;
+    border: 1px solid black;
+}
+
+#content-display {
+    /* Layout */
+    width: 75%;
+    height: 100%;
+    /* Deco */
+    background-color: beige;
+    border: 1px solid black;
+    /* Flex Settings */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#current-condition {
+    /* Layout */
+    height: 25%;
+    width: 95%;
+    /* Deco */
+    background-color: black;
+}
+
+#five-day {
+    /* Layout */
+    height: 70%;
+    width: 95%;
+    /* Deco */
+    background-color: black;
+}
