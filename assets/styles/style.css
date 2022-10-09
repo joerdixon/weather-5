@@ -26,9 +26,10 @@ main {
 #search-area {
     width: 20%;
     height: 100%;
+    text-align: center;
     /* Deco */
     background-color: beige;
-    border: 1px solid black;
+    border: 1px solid brown;
 }
 
 #content-display {
@@ -37,7 +38,7 @@ main {
     height: 100%;
     /* Deco */
     background-color: beige;
-    border: 1px solid black;
+    border: 1px solid brown;
     /* Flex Settings */
     display: flex;
     flex-direction: column;
@@ -50,7 +51,11 @@ main {
     height: 25%;
     width: 95%;
     /* Deco */
-    background-color: black;
+    background-color: brown;
+    /* Flex Settings */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 #five-day {
@@ -58,5 +63,5 @@ main {
     height: 70%;
     width: 95%;
     /* Deco */
-    background-color: black;
+    background-color: brown;
 }
