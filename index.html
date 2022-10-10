@@ -7,6 +7,9 @@
     <title>Weather 5</title>
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/styles/reset.css">
+    <!-- Bulma -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
+    <!-- Custom -->
     <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 <body>
@@ -20,15 +23,27 @@
             <h2>Search for a City:</h2>
             <input type="text" placeholder="City..." id='search-bar'>
             <button type='submit' id="search-button">Search</button>
+            <h2>History</h2>
+            <ol></ol>
         </section>
         <section id="content-display">
             <div id="current-condition">
-                <h2>Search for a city</h2>
-                <p></p>
-                <p></p>
-                <p></p>
+                <h2 id="citywdate" >Search for a city</h2>
+                <p id="cur-temp"></p>
+                <p id="cur-wind"></p>
+                <p id="cur-humidity"></p>
             </div>
             <div id="five-day">
+                <div class="daycard" data-day="0">
+                </div>
+                <div class="daycard" data-day="1">
+                </div>
+                <div class="daycard" data-day="2">
+                </div>
+                <div class="daycard" data-day="3">
+                </div>
+                <div class="daycard" data-day="4">
+                </div>
             </div>
         </section>
     </main>

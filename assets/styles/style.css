@@ -19,6 +19,16 @@ main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    /* Deco */
+    color: white;
+}
+
+/* Class Styling */
+
+.card-content {
+    width: 20%;
+    height: 75%;
+    border: 2px solid white;
 }
 
 /* ID Styling */
@@ -30,6 +40,7 @@ main {
     /* Deco */
     background-color: beige;
     border: 1px solid brown;
+    color: black;
 }
 
 #content-display {
@@ -50,6 +61,7 @@ main {
     /* Layout */
     height: 25%;
     width: 95%;
+    padding: 2vh;
     /* Deco */
     background-color: brown;
     /* Flex Settings */
@@ -64,4 +76,8 @@ main {
     width: 95%;
     /* Deco */
     background-color: brown;
+    /* Flex Settings */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
