@@ -53,7 +53,7 @@ function getFiveDay(lat, lon) {
 
             // Create the date and icon elements, append together then to page.
             let someDate = document.createElement("h3");
-            someDate.textContent = i;
+            someDate.textContent = `Day ${i + 1}`;
 
             console.log(data)
             // Icon
