@@ -91,6 +91,8 @@ main {
     padding: 2vh;
     /* Deco */
     background-color: var(--semi-background);
+    border: 3px solid white;
+
     /* Flex Settings */
     display: flex;
     flex-direction: column;
@@ -99,8 +101,10 @@ main {
 
 #five-day {
     /* Layout */
-    height: 70%;
     width: 95%;
+    padding: 5vh;
+    margin: 2vh;
+    border: 3px solid white;
     /* Deco */
     background-color: var(--semi-background);
     /* Flex Settings */
