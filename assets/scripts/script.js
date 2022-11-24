@@ -10,6 +10,8 @@ const curTemp = document.getElementById("cur-temp")
 const curWind = document.getElementById("cur-wind")
 const curHumidity = document.getElementById("cur-humidity")
 
+let lcSpace = 0;
+
 // Functions --------------------------------------------------
 // Gets coordinates for the location based on a city name.
 function getCoordinates(cityName) {
@@ -82,7 +84,8 @@ function getFiveDay(lat, lon) {
             console.log(e.target.innerText);
         });
 
-        localStorage.setItem(data.city.name, someUrl);
+        localStorage.setItem(lcSpace, data.city.name);
+        lcSpace++;
         // Manipulate data here
     });
 }
@@ -94,11 +97,9 @@ searchButton.addEventListener("click", function() {
     getCoordinates(searchBar.value);
 })
 
-
-
-
-
-getCoordinates("Seattle");
+for (let i = 0; i < Object.keys(localStorage).length; i++) {
+    getCoordinates(localStorage.getItem(i));
+}
 
 // PSEUDOCODE
 
