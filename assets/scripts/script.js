@@ -2,6 +2,8 @@
 // Search Section
 const searchButton = document.getElementById("search-button");
 const searchBar = document.getElementById("search-bar");
+// History Section
+const history = document.getElementById("history");
 // Current Weather Display
 const cityDate = document.getElementById("citywdate")
 const curTemp = document.getElementById("cur-temp")
@@ -32,13 +34,13 @@ function getWeather(lat, lon) {
         curTemp.textContent = "Temp: " + data.main.temp + " deg";
         curWind.textContent = "Wind: " + data.wind.speed + " mph";
         curHumidity.textContent = "Humidity: " + data.main.humidity + "%";
-        console.log(data)
-    });
+    });  
 } 
 
 // Gets 5 day forecast for a location based on coordinates
 function getFiveDay(lat, lon) {
-    fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=db5145c3b2e95938686d1418d4647b00&cnt=40&units=imperial").then(
+    let someUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=db5145c3b2e95938686d1418d4647b00&cnt=40&units=imperial`;
+    fetch(someUrl).then(
         function (response) {
         return response.json();
       }).then(function (data) {
@@ -46,9 +48,12 @@ function getFiveDay(lat, lon) {
             // Select new weather card
             let someFiveDay = document.querySelector("[data-day='" + i + "']")
             someFiveDay.innerHTML=''
+
             // Create the date and icon elements, append together then to page.
             let someDate = document.createElement("h3");
             someDate.textContent = i;
+
+            // Icon
             let someIcon = document.createElement("img");
             someIcon.setAttribute("alt", "weather icon")
             someDate.appendChild(someIcon);
@@ -65,16 +70,20 @@ function getFiveDay(lat, lon) {
             let someHumidity = document.createElement("p");
             someHumidity.textContent = "Humidity: " + data.list[i * 8].main.humidity + "%";
             someFiveDay.appendChild(someHumidity);
-            console.log(someFiveDay);
         }
+        // Create history entry
+        let newHistory = document.createElement("div");
+        newHistory.setAttribute("class", "historyTab");
+        newHistory.textContent = data.city.name;
+        history.appendChild(newHistory);
+        newHistory.addEventListener("click", function (e) {
+            e.preventDefault();
+            getCoordinates(e.target.innerText)
+            console.log(e.target.innerText);
+        });
 
+        localStorage.setItem(data.city.name, someUrl);
         // Manipulate data here
-        console.log(data.list[0])
-        console.log(data.list[8])
-        console.log(data.list[16])
-        console.log(data.list[24])
-        console.log(data.list[32])
-        // console.log(data.list)
     });
 }
 
@@ -84,6 +93,10 @@ function getFiveDay(lat, lon) {
 searchButton.addEventListener("click", function() {
     getCoordinates(searchBar.value);
 })
+
+
+
+
 
 getCoordinates("Seattle");
 

@@ -43,6 +43,21 @@ main {
     color: black;
 }
 
+#history {
+    /* Flex Settings */
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#history div {
+    width: 80%;
+    background-color: bisque;
+    margin: .5vh;
+    padding: .3vh;
+}
+
 #content-display {
     /* Layout */
     width: 75%;
