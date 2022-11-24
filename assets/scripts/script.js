@@ -55,9 +55,11 @@ function getFiveDay(lat, lon) {
             let someDate = document.createElement("h3");
             someDate.textContent = i;
 
+            console.log(data)
             // Icon
             let someIcon = document.createElement("img");
-            someIcon.setAttribute("alt", "weather icon")
+            someIcon.setAttribute("src", data.list[i * 8].weather[0].icon)
+            someIcon.setAttribute("alt", "icon")
             someDate.appendChild(someIcon);
             someFiveDay.appendChild(someDate);
             // Temp
@@ -81,7 +83,6 @@ function getFiveDay(lat, lon) {
         newHistory.addEventListener("click", function (e) {
             e.preventDefault();
             getCoordinates(e.target.innerText)
-            console.log(e.target.innerText);
         });
 
         localStorage.setItem(lcSpace, data.city.name);
